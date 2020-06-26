@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Game Challenge</title>
+
+</head>
+
+<body>
+    <script>
+        // * Starting from a blank HTML file, create an array with 10 question objects. Each object in the array should be structured as follows: 
+        var questions = [
+            { q: "Is the sky blue", a: "true" },
+            { q: "Grass is green", a: "true" },
+            { q: "we love covid", a: "false" }
+        ]
+        // * Then create code that will ask the user questions, one by one. The user must answer by hitting OK (for true) or Cancel (for false).
+
+        for (var i = 0; i < questions.length; i++) {
+            console.log(i);
+
+            var answer = confirm(questions[i].q)
+        }
+
+
+// * Check the user's answer against the correct answer, and provide them with an alert telling them if they are right or wrong.
+
+
+
+
+    </script>
+</body>
+
+</html>
