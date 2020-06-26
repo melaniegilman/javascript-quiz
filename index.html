@@ -1,35 +1,27 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <title>Game Challenge</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <script defer src="script.js"></script>
+    <title>JavaScript Quiz</title>
 </head>
-
 <body>
-    <script>
-        // * Starting from a blank HTML file, create an array with 10 question objects. Each object in the array should be structured as follows: 
-        var questions = [
-            { q: "Is the sky blue", a: "true" },
-            { q: "Grass is green", a: "true" },
-            { q: "we love covid", a: "false" }
-        ]
-        // * Then create code that will ask the user questions, one by one. The user must answer by hitting OK (for true) or Cancel (for false).
-
-        for (var i = 0; i < questions.length; i++) {
-            console.log(i);
-
-            var answer = confirm(questions[i].q)
-        }
-
-
-// * Check the user's answer against the correct answer, and provide them with an alert telling them if they are right or wrong.
-
-
-
-
-    </script>
+    <div class="container">
+        <div id="question-container" class="hidden">
+            <div id="question">Question</div>
+                <div id="answer-buttons" class="btn-grid">
+                <button class="btn">Answer 1</button>
+                <button class="btn">Answer 2</button>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button id="start-btn" class="start-btn btn">Start</button>
+                <button id="next-btn" class="next-btn btn hidden">Next</button>
+            </div>
+                       
+    </div>
 </body>
-
 </html>
