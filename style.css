@@ -1,6 +1,6 @@
 *, *::before, *::after {
     box-sizing: border-box;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;    
     font-size: 20px;
 }
 
@@ -12,8 +12,7 @@ body {
     height: 100vh;
     justify-content: center;
     align-items: center;
-    background-color: aliceblue;
-    
+    background-color: aliceblue;    
 }
 
 .container {
@@ -27,8 +26,7 @@ body {
     justify-content: center;
     display: flex;
     width: 50vw;
-    height: 50vh;
-    
+    height: 50vh;    
 }
 
 .btn-grid {
