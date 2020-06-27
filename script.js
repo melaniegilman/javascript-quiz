@@ -1,16 +1,32 @@
+document.addEventListener('DOMContentLoaded', () => {
+const timeLeftDisplay = document.querySelector('#time-left')
+const startBtn = document.querySelector('#start-btn')
 const startButton = document.getElementById('start-btn')
 const nextButton = document.getElementById('next-btn')
 const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 let shuffledQuestions, currentQuestionIndex
-
+let timeLeft = 30
+let score = 0 
 
 startButton.addEventListener('click', startQuiz)
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++
     setNextQuestion()
-})
+})  
+//function for 30 second timer
+    function countDown() {
+        setInterval(function(){
+            if(timeLeft <= 0) {
+                clearInterval(timeLeft = 0)
+            }
+            console.log(timeLeft);
+            timeLeftDisplay.innerHTML = timeLeft
+            timeLeft -= 1
+        }, 1000)
+    }
+    startBtn.addEventListener('click', countDown)
 
 //function to begin the quiz
 function startQuiz() {
@@ -21,7 +37,6 @@ function startQuiz() {
     questionContainerElement.classList.remove('hidden')
     setNextQuestion()
 }
-
 
 //function to begin next question
 function setNextQuestion() {
@@ -64,7 +79,6 @@ function selectAnswer(e) {
         startButton.innerText = 'Restart'
         startButton.classList.remove('hidden')
     }
-    
 }
 //correct and wrong functions
 function setStatusClass(element, correct) {
@@ -74,12 +88,30 @@ function setStatusClass(element, correct) {
     } else {
     element.classList.add('wrong')
     }
+    console.log(element);
 }
 
 function clearStatusClass(element) {
     element.classList.remove('correct')
     element.classList.remove('wrong')
 }
+
+//create a function that adds 1 to score variable when a correct answer is selected, and removes 5 seconds from timer when an incorrect 
+//answer is selected. Use var score...use nextButton...and use timeLeft
+
+function keepScore(correct) {
+    if(correct) {
+        console.log(score +1);
+    } else {
+        console.log(timeLeft -5);
+    }
+}
+
+
+
+
+
+
 //array of questions and answers
 const questions = [
     {
@@ -128,3 +160,4 @@ const questions = [
         ]
     }
 ];
+})

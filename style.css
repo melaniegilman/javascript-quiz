@@ -1,6 +1,7 @@
 *, *::before, *::after {
     box-sizing: border-box;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;    
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
     font-size: 20px;
 }
 
@@ -12,7 +13,7 @@ body {
     height: 100vh;
     justify-content: center;
     align-items: center;
-    background-color: aliceblue;    
+    background-color: aliceblue;
 }
 
 .container {
@@ -24,9 +25,10 @@ body {
     box-shadow: 0 0 10px 2px;
     align-items: center;
     justify-content: center;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr;
     width: 50vw;
-    height: 50vh;    
+    height: 50vh;
 }
 
 .btn-grid {
@@ -34,7 +36,6 @@ body {
     grid-template-columns: repeat(2, auto);
     gap: 10px;
     margin: 20px, 0;
-
 }
 
 .btn {
@@ -63,4 +64,13 @@ body {
 
 .hidden {
     display: none;
+}
+#countdown {
+    background-color: cornsilk;
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    font-size: 30px;
+    padding: 5px;
+    border-radius: 5px;
 }
