@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+
 const timeLeftDisplay = document.querySelector('#time-left')
 const startBtn = document.querySelector('#start-btn')
 const startButton = document.getElementById('start-btn')
@@ -19,9 +19,11 @@ nextButton.addEventListener('click', () => {
     function countDown() {
         setInterval(function(){
             if(timeLeft <= 0) {
-                clearInterval(timeLeft = 0)
+                clearInterval(timeLeft = 0);
+               // window.alert("Your time is up!")
+                //startQuiz()
             }
-            console.log(timeLeft);
+            //console.log(timeLeft);
             timeLeftDisplay.innerHTML = timeLeft
             timeLeft -= 1
         }, 1000)
@@ -69,6 +71,7 @@ function resetState() {
 function selectAnswer(e) {
     const selectedButton = e.target
     const correct = selectedButton.dataset.correct
+    keepScore(correct)
     setStatusClass(document.body, correct)
     Array.from(answerButtonsElement.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
@@ -83,34 +86,28 @@ function selectAnswer(e) {
 //correct and wrong functions
 function setStatusClass(element, correct) {
     clearStatusClass(element)
-    if(correct) {
+    if (correct) {
         element.classList.add('correct')
     } else {
-    element.classList.add('wrong')
+    element.classList.add('wrong') 
+    }}
+    //console.log(element);
+
+function keepScore(isCorrect) {
+    if(isCorrect) {
+        score++
+        console.log(score);
+    } else {
+        timeLeft -=2
+        console.log(timeLeft);
     }
-    console.log(element);
-}
+}  
+
 
 function clearStatusClass(element) {
     element.classList.remove('correct')
     element.classList.remove('wrong')
 }
-
-//create a function that adds 1 to score variable when a correct answer is selected, and removes 5 seconds from timer when an incorrect 
-//answer is selected. Use var score...use nextButton...and use timeLeft
-
-function keepScore(correct) {
-    if(correct) {
-        console.log(score +1);
-    } else {
-        console.log(timeLeft -5);
-    }
-}
-
-
-
-
-
 
 //array of questions and answers
 const questions = [
@@ -159,5 +156,6 @@ const questions = [
             {text: 'None are true', correct: false}
         ]
     }
-];
+]
+document.addEventListener('DOMContentLoaded', () => {
 })
