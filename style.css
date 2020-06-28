@@ -62,7 +62,7 @@ body {
     align-items: center;
 }
 
-.hidden {
+.hide {
     display: none;
 }
 #countdown {

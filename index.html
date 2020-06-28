@@ -9,9 +9,10 @@
   <title>JavaScript Quiz</title>
 </head>
 <body>
+    <h3 id="score" onclick="viewHighScores()">View Scores</h3>
     <h3 id="countdown">Seconds Left: <span id="time-left">30</span></h3>
   <div class="container">
-    <div id="question-container" class="hidden">
+    <div id="question-container" class="hide">
       <div id="question">Question</div>
       <div id="answer-buttons" class="btn-grid">
         <button class="btn">Answer 1</button>
@@ -19,10 +20,19 @@
         <button class="btn">Answer 3</button>
         <button class="btn">Answer 4</button>   
       </div>
+      <div id="answer-status" class="answer-status"></div>
+    </div>
+    <div class="hide" id="initials">
+        <h1 class="initial-entry">please enter initials:</h1>
+        <input id="initial-input" class="initial-text-box" type="text" placeholder="enter initials here"/>
+        <button disabled class="initials-btn btn" id="initials-btn">Save Score</button>
+    </div>
+    <div class="hide high-scores" id="high-scores">
+        <h1 class="score-title">Scores:</h1>
+        <div class="scores" id="scoreContainer"></div>
     </div>
     <div class="controls">
       <button id="start-btn" class="start-btn btn">Start</button>
-      <button id="next-btn" class="next-btn btn hidden">Next</button>
     </div>
   </div>
 </body>
