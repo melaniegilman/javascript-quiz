@@ -1,10 +1,23 @@
 *, *::before, *::after {
     box-sizing: border-box;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-weight: bold;
-    font-size: 20px;
+    font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+    font-weight: lighter;
+    font-size: 20px;   
 }
-
+/*Main*/
+header {
+    padding: 50px;
+    position: absolute;
+    width: 100%;
+    background-color: #4d5369;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    top: 0;
+    border-bottom: double #8a8482 10px;
+    font-size: 40px;
+    color: #33332f;
+}
 body {
     padding: 0;
     margin: 0;
@@ -13,64 +26,82 @@ body {
     height: 100vh;
     justify-content: center;
     align-items: center;
-    background-color: aliceblue;
+    background-color: rgb(179, 192, 184);
 }
-
 .container {
     width: 800px;
     max-width: 80%;
-    background-color: rgb(186, 202, 238);
-    border-radius: 10px;
+    background-color: #8a8482;
     padding: 10px;
-    box-shadow: 0 0 10px 2px;
     align-items: center;
     justify-content: center;
     display: grid;
     grid-template-columns: 1fr;
-    width: 50vw;
-    height: 50vh;
+    width: 40vw;
+    height: 40vh;
+    border-radius: 3px;
+}
+/*Seconds Left*/
+#countdown {
+    position: absolute;
+    top: 40px;
+    left: 700px;
+    font-size: 23px;
+    padding: 5px;
+    border-radius: 5px;
+    color: #33332f;
+    cursor: default;
+}
+/*ViewScores*/
+#score{
+    position: absolute;
+    top: 40px;
+    left: 900px;
+    font-size: 23px;
+    padding: 5px;
+    border-radius: 5px;
+    color: #33332f;
+    cursor: default;
 }
 
+/*Buttons*/
 .btn-grid {
     display: grid;
     grid-template-columns: repeat(2, auto);
     gap: 10px;
-    margin: 20px, 0;
+    margin: 20px, 0;    
 }
-
 .btn {
-    border: 2px solid blueviolet;
-    border-radius: 5px;
+    border: 3px solid #4d5369;
     color: rgb(65, 75, 83);
-    outline: none;
-    
+    outline: none;    
 }
-
 .btn:hover {
-    border-color: black;
+    border-color: #4a6e46;
 }
-
 .start-btn, .next-btn {
     font-size: 1.5rem;
     font-weight: bold;
     padding: 10px 20px;
 }
-
 .controls {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 .hide {
     display: none;
 }
-#countdown {
-    background-color: cornsilk;
-    position: absolute;
-    top: 8px;
-    left: 16px;
-    font-size: 30px;
-    padding: 5px;
-    border-radius: 5px;
+/*Font Colors*/
+#question {
+    color: #33332f;
+}
+#answer-status {
+    color: #33332f;
+}
+.initial-entry {
+    color: #33332f;
+}
+#high-scores {
+    color: #33332f;
 }
