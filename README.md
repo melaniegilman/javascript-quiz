@@ -9,6 +9,7 @@ This quiz is brief but fun. The program adds one point to the score variable for
 ## Built With
 * HTML
 * CSS
+* JavaScript
 
 ### Contributions
 Melanie Gilman
