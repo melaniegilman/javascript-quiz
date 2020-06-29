@@ -16,8 +16,8 @@ let score = 0;
 let shuffledQuestions, currentQuestionIndex
 //when quiz restarts
 function resetState() {
-    timeLeftDisplay.innerHTML = 10
-    timeLeft = 10
+    timeLeftDisplay.innerHTML = 20
+    timeLeft = 20
     startTimer()
     score = 0
     initialInput.value = ""
